@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Liberia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet-0.6/leaflet.js"></script>
+  <script>
+    function init() {
+        var bounds = new L.LatLngBounds(
+            new L.LatLng(4.174383, -12.284792),
+            new L.LatLng(8.704122, -6.115253));
+        var map = L.map('map', {
+            center: [6.15, -10],
+            zoom:7,
+            maxBounds: bounds,
+        });
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+        var options = {
+            minZoom: 1,
+            maxZoom: 12,
+            opacity: 1.0,
+            tms: false
+        };
+
+        L.tileLayer('{z}/{x}/{y}.png', options).addTo(map);
+
+        // Array of locations for markers
+         var markers = [
+            [ 7.19, -10.18, "Banga"],
+            [ 6.842, -10.66, "Bomboma"],
+            [ 6.47, -10.75, "Brewers Landing"],
+            [  6.75257, -11.4, "Cape Mount"],
+            [ 6.9962692, -9.470905, "Gbarnga" ],
+            [ 7.22, -10.07, "Kolobanu" ],
+            [ 7, -10.54, "Medina"],
+            [ 6.693, -10.72, "Moala"],
+            [ 6.3280343, -10.7977882, "Monrovia" ],
+            [ 7.14, -10.22, "Moylakwelli"],
+            [ 6.58, -10.8, "Suehn"],
+            [ 7.22, -10.07, "Soe" ],
+            [ 7.02, -10.46, "Totokwelli"]
+
+         ];
+         
+         //Loop through the markers array
+         for (var i=0; i<markers.length; i++) {
+           console.log(markers);
+            var lat = markers[i][0];
+            var lon = markers[i][1];
+            var popupText = markers[i][2];
+
+            
+             var markerLocation = new L.LatLng(lat, lon);
+             var marker = new L.marker(markerLocation);
+             map.addLayer(marker);
+         
+             marker.bindPopup(popupText);
+         
+         }
+
+         
+    }
+  </script>
+  <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
+</head>
+<body onload="init()">
+<div id="map"></div>
+</body>
+</html>
