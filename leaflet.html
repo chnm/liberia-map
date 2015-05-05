@@ -8,11 +8,11 @@
   <script>
     function init() {
         var bounds = new L.LatLngBounds(
-            new L.LatLng(4.174383, -12.284792),
-            new L.LatLng(8.704122, -6.115253));
+            new L.LatLng(3.174383, -13.284792),
+            new L.LatLng(9.704122, -5.115253));
         var map = L.map('map', {
             center: [6.15, -10],
-            zoom:7,
+            zoom:1,
             maxBounds: bounds,
         });
         L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
@@ -27,19 +27,53 @@
 
         // Array of locations for markers
          var markers = [
+            [ 7.17, -9.56, "Bakratown" ],
             [ 7.19, -10.18, "Banga"],
+            [ 7.185, -9.23, "Banga" ],
+            [ 5.29, -9.045, "Bashman" ],
+            [ 7.16, -9.93, "Betala" ],
+            [ 6.53, -10.38, "Binda" ],
             [ 6.842, -10.66, "Bomboma"],
+            [ 7.07, -9.87, "Bonuta" ],
             [ 6.47, -10.75, "Brewers Landing"],
-            [  6.75257, -11.4, "Cape Mount"],
+            [ 6.75257, -11.4, "Cape Mount"],
+            [ 5.88, -8.83, "Checkomma" ],
+            [ 7.13, -9.14, "Garmu" ],
             [ 6.9962692, -9.470905, "Gbarnga" ],
-            [ 7.22, -10.07, "Kolobanu" ],
+            [ 6.9962692, -9.28, "Gbai" ],
+            [ 5.92, -10.08, "Grand Bassa" ],
+            [ 5.12, -9.08, "Grand Butu" ],
+            [ 6.21, -8.93, "Granh" ],
+            [ 6.57, -10.35, "Kaka Town" ],
+            [ 7.23, -10.01, "Kolobanu" ],
+            [ 6.45, -10.265, "Lenga Town" ],
             [ 7, -10.54, "Medina"],
+            [ 6.74, -10.16, "Memmeh Town" ],
+            [ 6.81, -9.89, "Miamu" ],
             [ 6.693, -10.72, "Moala"],
             [ 6.3280343, -10.7977882, "Monrovia" ],
             [ 7.14, -10.22, "Moylakwelli"],
-            [ 6.58, -10.8, "Suehn"],
+            [ 7.185, -9.35, "Naama" ],
+            [ 6.18, -10.33, "Owens Grove" ],
+            [ 5.19, -9.07, "Paidibo" ],
+            [ 7.16, -9.39, "Pele" ],
+            [ 6.82, -9.16, "Qu&eacute; Congo" ],
+            [ 6.83, -10.02, "Reppue Town" ],
+            [ 6.56, -8.83, "Sessu" ],
+            [ 5, -9.03, "Sinoe Town" ],
             [ 7.22, -10.07, "Soe" ],
-            [ 7.02, -10.46, "Totokwelli"]
+            [ 5.73, -8.82, "Sordya" ],
+            [ 6.98, -9.59, "Suah Koko" ],
+            [ 6.58, -10.8, "Suehn"],
+            [ 6.42, -8.59, "Suaro" ],
+            [ 6.48, -8.87, "Tappi Town" ],
+            [ 7.02, -10.46, "Totokwelli"],
+            [ 5.36, -9.02, "Towya" ],
+            [ 6.11, -8.845, "Weea" ],
+            [ 5.97, -8.895, "Tru&eacute;" ],
+            [ 6.27, -8.96, "Zai Town" ],
+            [ 6.9, -9.72, "Zeanshue" ],
+            [ 6.62, -9.15, "Zicker" ],
 
          ];
          
