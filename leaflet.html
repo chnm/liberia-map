@@ -7,21 +7,25 @@
   <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
   <script>
     function init() {
-        var bounds = new L.LatLngBounds(
-            new L.LatLng(3.174383, -13.284792),
-            new L.LatLng(9.704122, -5.115253));
+        var southWest = L.latLng(3.174383, -13.284792),
+            northEast = L.latLng(9.704122, -5.115253),
+            bounds = L.latLngBounds(southWest, northEast);
         var map = L.map('map', {
             center: [6.2, -9.2],
-            zoom:1,
+            zoom:8,
             maxBounds: bounds,
             attributionControl: false,
         });
-        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+
         var options = {
-            minZoom: 1,
+            bounds: bounds,
+            minZoom: 8,
             maxZoom: 12,
             opacity: 1.0,
-            tms: false
+            tms: false,
+            attributionControl: false,
+
         };
 
         L.tileLayer('{z}/{x}/{y}.png', options).addTo(map);
@@ -81,7 +85,6 @@
          
          //Loop through the markers array
          for (var i=0; i<markers.length; i++) {
-           console.log(markers);
             var lat = markers[i][0];
             var lon = markers[i][1];
             var popupText = markers[i][2];
